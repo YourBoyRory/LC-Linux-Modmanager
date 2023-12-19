@@ -1,10 +1,10 @@
 #!/bin/bash
-config="./config"
+config="/opt/lcmm/config"
 gameDir=$(grep -oP '^gameDir=\K.*' $config | head -n1 )
 modToInstall="$@"
 rand=${RANDOM}
 
-mkdir "/opt/Steam/steamapps/common/Lethal Company/BepInEx/plugins"
+mkdir "$gameDir/BepInEx/plugins"
 wget "$modToInstall" -O "/tmp/thunderstoreCache_$rand.zip"
 unzip -o "/tmp/thunderstoreCache_$rand.zip" -d "/tmp/thunderstoreCache_$rand"
 if [[ $? -eq 0 ]] ; then

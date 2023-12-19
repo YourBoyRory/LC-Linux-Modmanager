@@ -1,5 +1,5 @@
 #!/bin/bash
-config="./config"
+config="/opt/lcmm/config"
 gameDir=$(grep -oP '^gameDir=\K.*' $config | head -n1 )
 rand=${RANDOM}
 
